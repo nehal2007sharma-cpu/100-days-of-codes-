@@ -55,9 +55,7 @@ int main (){
     return 0;
     }
 //Program to convert temperature from Celsius to Fahrenheit
-
 #include <stdio.h>
-
 int main() {
     float celsius, fahrenheit;
     printf("Enter temperature in Celsius: ");
@@ -66,5 +64,60 @@ int main() {
     printf("Temperature in Fahrenheit: %.2f\n", fahrenheit);
     return 0;
 }
- // Program to 
+ // Program to swap two numbers without using a third variable
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    printf("\nBefore swapping: a = %d, b = %d\n", a, b);
+    a = a + b;  
+    b = a - b;  
+    a = a - b;  
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+// Program to find and display the sum of first n naturtal number
+#include <stdio.h>
+int main() {
+ int n, sum =  0;
+    printf("enter a number: ");
+    scanf("%d", &n);
+    for (int i=1; i<=n; i++) {
+        sum += i;
+    }
+       printf("the sum of first %d natural number is= %d\n", n,
+        sum);
+        return 0;
+    }
+// Program to calculate si and ci 
+#include <stdio.h>
+#include <math.h>   
+int main() {
+    float principal, rate, time, si, ci;
+   printf("Enter Principal amount: ");
+    scanf("%f", &principal);
+    printf("Enter Rate of interest (in %%): ");
+    scanf("%f", &rate);
+    printf("Enter Time (in years): ");
+    scanf("%f", &time);
+    si = (principal * rate * time) / 100;
+    ci = principal * (pow((1 + rate / 100), time)) - principal;
+    printf("\nSimple Interest = %.2f", si);
+    printf("\nCompound Interest = %.2f", ci);
+    return 0;
+}
+// Program to input time in seconds and convert it to hours:minutes:seconds format.
+#include <stdio.h>
+int main() {
+    int total_seconds, hours, minutes, seconds;
+    printf("Enter time in seconds: ");
+    scanf("%d", &total_seconds);
+    hours = total_seconds / 3600;          
+    minutes = (total_seconds % 3600) / 60;  
+    seconds = total_seconds % 60;           
+    printf("Time: %02d:%02d:%02d\n", hours, minutes, seconds);
+    return 0;
+}
+
  
