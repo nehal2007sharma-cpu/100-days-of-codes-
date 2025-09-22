@@ -99,6 +99,125 @@ int main () {
    return 0;    
 }
 //Program to find the roots of a quadratic equation and categorize them.
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float a, b, c, discriminant, root1, root2, realPart, imagPart; printf("Enter coefficients a, b, and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+    if (a == 0) {
+        printf("This is not a quadratic equation.\n");
+        return 0;
+    }
+    discriminant = b * b - 4 * a * c;
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("Roots are real and distinct: %.2f and %.2f\n", root1, root2);
+    }
+    else if (discriminant == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("Roots are real and equal: %.2f and %.2f\n", root1, root2);
+    }
+    else {
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-discriminant) / (2 * a);
+        printf("Roots are complex: %.2f + %.2fi and %.2f - %.2fi\n",
+               realPart, imagPart, realPart, imagPart);
+    }
+    return 0;
+}
+// Pogram that accepts a percentage (0-100) and assigns a grade based on the following criteria: 
+90-100: Grade A 
+80-89: Grade B 
+70-79: Grade C 
+60-69: Grade D 
+below 60: Grade F.
+    #include <stdio.h>
+int main() {
+    int percentage;
+    printf("Enter percentage (0-100): ");
+    scanf("%d", &percentage);
+    if (percentage < 0 || percentage > 100) {
+        printf("Invalid percentage! Please enter a value between 0 and 100.\n");
+    }
+    else if (percentage >= 90) {
+        printf("Grade: A\n");
+    }
+    else if (percentage >= 80) {
+        printf("Grade: B\n");
+    }
+    else if (percentage >= 70) {
+        printf("Grade: C\n");
+    }
+    else if (percentage >= 60) {
+        printf("Grade: D\n");
+    }
+    else {
+        printf("Grade: F\n");
+    }
+    return 0;
+}
+//Program to classify whether triangle is isoceles, equilateral, scalene
+#include <stdio.h>
+int main() {
+    int a, b, c;
+    printf("Enter three sides of the triangle: ");
+    scanf("%d %d %d", &a, &b, &c);
+    if (a + b > c && a + c > b && b + c > a) {
+        if (a == b && b == c) {
+            printf("The triangle is Equilateral.\n");
+        }
+        else if (a == b || b == c || a == c) {
+            printf("The triangle is Isosceles.\n");
+        }
+        else {
+            printf("The triangle is Scalene.\n");
+        }
+    }
+    else {
+        printf("The given sides do not form a valid triangle.\n");
+    }
+    return 0;
+}
+// program to display the day of the week based on a number (1–7) using switch-case.
+#include <stdio.h>
+int main() {
+    int day;
+    printf("Enter a number (1-7): ");
+    scanf("%d", &day);
+    switch(day) {
+        case 1:
+            printf("Sunday\n");
+            break;
+        case 2:
+            printf("Monday\n");
+            break;
+        case 3:
+            printf("Tuesday\n");
+            break;
+        case 4:
+            printf("Wednesday\n");
+            break;
+        case 5:
+            printf("Thursday\n");
+            break;
+        case 6:
+            printf("Friday\n");
+            break;
+        case 7:
+            printf("Saturday\n");
+            break;
+        default:
+            printf("Invalid input! Please enter a number between 1 and 7.\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
 
 
 
