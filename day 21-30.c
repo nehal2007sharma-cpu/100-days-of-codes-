@@ -209,13 +209,10 @@ int main() {
 }#include <stdio.h>
 int main() {
     int i, j, n = 5;
-
     for(i = n; i >= 1; i--) {
-        // Print spaces
         for(j = 1; j < i; j++) {
             printf(" ");
         }
-        // Print numbers
         for(j = i; j <= n; j++) {
             printf("%d", j);
         }
@@ -243,16 +240,15 @@ int main() {
 
 int main() {
     int i, j;
-    int groups[] = {1, 3, 5}; // Number of stars in each group
+    int groups[] = {1, 3, 5}; 
     int g;
 
     for(g = 0; g < 3; g++) {
         for(i = 0; i < groups[g]; i++) {
             printf("*\n");
         }
-        printf("\n"); // Empty line between groups
+        printf("\n");
     }
-
     return 0;
 }
 // 
@@ -267,12 +263,9 @@ program to print the following pattern:
 ***
 *
 #include <stdio.h>
-
 int main() {
     int i, j;
-    int n = 5; // Number of rows in the to
-
-    // Top half of the pyramid
+    int n = 5; 
     for(i = 1; i <= n; i++) {
         for(j = 1; j <= 2*i-1; j++) {
             printf("*");
@@ -285,8 +278,184 @@ int main() {
         }
         printf("\n");
     }
+    return 0;
+}
+// #include <stdio.h>
+
+int main() {
+    int i, j;
+    int n = 4; 
+    for(i = 1; i <= n; i++) {
+        // Print spaces
+        for(j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        for(j = 1; j <= 2*i - 1; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    for(i = n-1; i >= 1; i--) {
+        for(j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        for(j = 1; j <= 2*i - 1; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
- 
+// #include <stdio.h>
+int main() {
+    int i, j, n, isPrime;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Prime numbers from 1 to %d are:\n", n);
+
+    for(i = 2; i <= n; i++) { // Start from 2 because 1 is not prime
+        isPrime = 1; // Assume i is prim
+        for(j = 2; j*j <= i; j++) {
+            if(i % j == 0) {
+                isPrime = 0; // Not prime
+                break;
+            }
+        }
+        if(isPrime) {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+// program to print all the prime numbers from 1 to n.
+#include <stdio.h>
+int main() {
+    int n, i, j, isPrime;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    printf("Prime numbers from 1 to %d are:\n", n);
+    for(i = 2; i <= n; i++) {   
+        isPrime = 1;            
+        for(j = 2; j <= i / 2; j++) {   
+            if(i % j == 0) {
+                isPrime = 0;    
+                break;
+            }
+        }
+        if(isPrime == 1) {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+// Program Read and print elements of a one-dimensional array.
+#include <stdio.h>
+int main() {
+    int arr[100];  
+    int n, i;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);   
+    }
+
+    printf("The elements of the array are:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);  
+    }
+ return 0;
+}
+// Program Find the sum of array elements.
+#include <stdio.h>
+int main() {
+    int arr[100];   
+    int n, i, sum = 0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);   
+    }
+    for(i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    printf("Sum of array elements = %d\n", sum);
+    return 0;
+}
+// Program to find maximum and minimum element in an array.
+#include <stdio.h>
+int main() {
+    int arr[100];
+    int n, i;
+    int max, min;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    max = min = arr[0];
+    for(i = 1; i < n; i++) {
+        if(arr[i] > max)
+            max = arr[i];
+        if(arr[i] < min)
+            min = arr[i];
+    }
+    printf("Maximum element = %d\n", max);
+    printf("Minimum element = %d\n", min);
+    return 0;
+}
+// Program to Count even and odd numbers in an array.
+#include <stdio.h>
+int main() {
+    int arr[100];
+    int n, i;
+    int evenCount = 0, oddCount = 0;
+printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for(i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
+    }
+    printf("Total even numbers = %d\n", evenCount);
+    printf("Total odd numbers  = %d\n", oddCount);
+    return 0;
+}
+// Program to count positive, negative and zero elements in array.
+#include <stdio.h>
+int main() {
+    int arr[100];
+    int n, i;
+    int positiveCount = 0, negativeCount = 0, zeroCount = 0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for(i = 0; i < n; i++) {
+        if(arr[i] > 0)
+            positiveCount++;
+        else if(arr[i] < 0)
+            negativeCount++;
+        else
+            zeroCount++;
+    }
+    printf("Total positive numbers = %d\n", positiveCount);
+    printf("Total negative numbers = %d\n", negativeCount);
+    printf("Total zeros = %d\n", zeroCount);
+    return 0;
+}
+
+
 
