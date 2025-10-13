@@ -97,5 +97,152 @@ int main() {
     }
     return 0;
 }
+// program to check if a number is an Armstrong number.
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int num, originalNum, remainder, n = 0;
+    float result = 0.0;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    originalNum = num;
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++n;
+    }
+    originalNum = num;
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, n);
+        originalNum /= 10;
+    }
+    if ((int)result == num)
+        printf("%d is an Armstrong number.\n", num);
+    else
+        printf("%d is not an Armstrong number.\n", num);
+
+    return 0;
+}
+// program to check if a number is prime.
+#include <stdio.h>
+int main() {
+    int n, i, isPrime = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n <= 1) {
+        printf("%d is not a prime number.\n", n);
+        return 0;
+    }
+    for (i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+    if (isPrime)
+        printf("%d is a prime number.\n", n);
+    else
+        printf("%d is not a prime number.\n", n);
+
+    return 0;
+}
+// program to print all factors of a given number
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Factors of %d are: ", n);
+    for (i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+// a program to find the HCF (GCD) of two numbers.
+#include <stdio.h>
+int main() {
+    int a, b;
+    // Input from user
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    printf("HCF (GCD) = %d\n", a);
+    return 0;
+}
+// Program to print Lcm and gcd
+#include <stdio.h>
+int main() {
+    int a, b, tempA, tempB, gcd, lcm;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    tempA = a;
+    tempB = b;
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    gcd = a;
+    lcm = (tempA * tempB) / gcd;
+    printf("LCM = %d\n", lcm);
+
+    return 0;
+}
+// program to find the sum of digits of a number.
+#include <stdio.h>
+int main() {
+    int n, sum = 0, digit;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    while (n != 0) {
+        digit = n % 10;     
+        sum += digit;   
+        n /= 10;    
+    }
+    printf("Sum of digits = %d\n", sum);
+
+    return 0;
+}
+//a program to find the product of odd digits of a number.
+#include <stdio.h>
+int main() {
+    int n, digit, product = 1, hasOdd = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while (n != 0) {
+        digit = n % 10;   
+        if (digit % 2 != 0) {  
+            product *= digit;
+            hasOdd = 1;
+        }
+        n /= 10;         
+    }
+
+    if (hasOdd)
+        printf("Product of odd digits = %d\n", product);
+    else
+        printf("No odd digits found);
+            return 0;
+            }
+
+         
+            
+
+
+
+
+
+
+
+
 
   
