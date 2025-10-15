@@ -3,7 +3,7 @@
 int main() {
     char str[100];
     int count = 0, i = 0;
-    fgets(str, 100, stdin); // Supports spaces
+    fgets(str, 100, stdin);
     while (str[i] != '\0' && str[i] != '\n') {
         count++;
         i++;
@@ -129,5 +129,5 @@ int main() {
     printf("Frequency: %d\n", freq);
     return 0;
 }
-// 
+
 
